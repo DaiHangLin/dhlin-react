@@ -1,17 +1,25 @@
 import { createBrowserHistory } from 'history'
 import { applyMiddleware, compose, createStore } from 'redux'
 import { routerMiddleware } from 'connected-react-router'
-import createRootReducer from './reducers'
+import createRootReducer from '../reducers/createRootReducer'
+import logger from 'redux-logger'
+import createSagaMiddleware from 'redux-saga'
 export const history = createBrowserHistory()
+import rootSaga from '../saga'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const sagaMiddleware = createSagaMiddleware()
 
 export default function configureStore(preloadedState) {
   const store = createStore(
-    createRootReducer(history), // root reducer with router state
+    createRootReducer(history),
     preloadedState,
-    compose(
+    composeEnhancers(
       applyMiddleware(
-        routerMiddleware(history), // for dispatching history actions
-        // ... other middlewares ...
+        routerMiddleware(history),
+        logger,
+        sagaMiddleware,
       ),
     ),
   )
