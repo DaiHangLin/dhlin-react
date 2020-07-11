@@ -1,8 +1,6 @@
-import { delay } from 'redux-saga/effects'
+import { fork } from 'redux-saga/effects'
+import CounterSaga from './Counter/Counter.sags'
 
 export default function* rootSaga() {
-    while (true) {
-        yield delay(2000)
-        console.log('root saga running....')
-    }
+    yield fork(CounterSaga)
 }

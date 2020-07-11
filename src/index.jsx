@@ -5,6 +5,7 @@ import configureStore, { history } from './store/configureStore'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import CounterView from './components/Counter/Counter.view'
 import './index.css';
 
 const store = configureStore()
@@ -14,8 +15,9 @@ ReactDOM.render(
     <ConnectedRouter history={history}> { /* place ConnectedRouter under Provider */ }
       <> { /* your usual react-router v4/v5 routing */ }
         <Switch>
-          <Route exact path="/" render={() => (<div>Match</div>)} />
-          <Route render={() => (<div>Miss</div>)} />
+          <Route exact path="/" component={App} />
+          <Route exact path="/counter" component={CounterView} />
+          <Route render={() => (<div>404</div>)} />
         </Switch>
       </>
     </ConnectedRouter>

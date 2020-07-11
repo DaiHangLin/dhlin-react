@@ -23,6 +23,6 @@ export default function configureStore(preloadedState) {
       ),
     ),
   )
-
+  sagaMiddleware.run(rootSaga)
   return store
 }
