@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { counterDataSelecter, increamentData, decreamentData } from './Counter.redux'
-import Counter from './Counter'
+import { Counter } from './Counter'
 import { bindActionCreators } from 'redux'
 
 const mapStateToProps = (state) => {
