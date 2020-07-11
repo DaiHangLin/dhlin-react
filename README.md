@@ -7,7 +7,7 @@
 
 ```js
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { expectSaga } from 'redux-saga-test-plan'
 
 import { counter } from '../reducers/counter'
@@ -67,6 +67,7 @@ test('测试Counter的saga逻辑', () => {
 
 
 // test component
+// https://testing-library.com/docs/react-testing-library/example-intro
 test('测试组件的逻辑', () => {
   const { getByText } = render(<Provider store={configureStore()}>
     <CounterView/>
@@ -74,6 +75,18 @@ test('测试组件的逻辑', () => {
   const linkElement = getByText("+");
   expect(linkElement).toBeInTheDocument();
 })
+
+test('测试点击事件', async () => {
+  const { getByText } = render(<Provider store={configureStore()}>
+    <CounterView/>
+  </Provider>)
+  const ele = getByText("+")
+  fireEvent.click(ele)
+  const result = getByText("1")
+  expect(result).toBeInTheDocument();
+})
+
+
 
 
 ```
