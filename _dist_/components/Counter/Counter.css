@@ -1,0 +1,23 @@
+.Counter-container {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: 200px;
+    background-color: aliceblue;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+}
+
+.counter-btn {
+    min-width: 100px;
+    height: 40px;
+    background-color: darksalmon;
+    text-align: center;
+    font-size: 20px;
+    line-height: 40px;
+}
+.counter-btn:hover {
+    background-color: indianred;
+    cursor: pointer;
+} 

@@ -1,0 +1,16 @@
+{
+  "imports": {
+    "connected-react-router": "./connected-react-router.js",
+    "history": "./history.js",
+    "lodash": "./lodash.js",
+    "react": "./react.js",
+    "react-dom": "./react-dom.js",
+    "react-redux": "./react-redux.js",
+    "react-router": "./react-router.js",
+    "redux": "./redux.js",
+    "redux-logger": "./redux-logger.js",
+    "redux-saga": "./redux-saga.js",
+    "redux-saga/effects": "./redux-saga/effects.js",
+    "reselect": "./reselect.js"
+  }
+}
