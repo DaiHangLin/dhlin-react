@@ -41,7 +41,7 @@ test('测试Counter的selector', () => {
 ```
 
 
-- saga 层
+- saga 层 
 
 ```js
 // 这里我们 handleIncreamentData 的saga函数 等待一个 INCREAMENT_DATA 动作
