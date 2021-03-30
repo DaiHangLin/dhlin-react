@@ -19,7 +19,8 @@ test('测试Counter "+ 1" 的reducer', () => {
 });
 ```
 
-- selector 层
+- s
+- elector 层
 
 ```js
 // selector 和 reducer 一致，也是一个纯函数
@@ -38,6 +39,7 @@ test('测试Counter的selector', () => {
   expect(result).toEqual(expectedResult)
 })
 ```
+
 
 - saga 层
 
