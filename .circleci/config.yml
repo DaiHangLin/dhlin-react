@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "rm node module"
-          command: "rm -rd node_modules"
+          command: "rm -rf node_modules"
       - run:
           name: "install"
           command: "npx pnpm i"
