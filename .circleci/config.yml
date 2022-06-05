@@ -13,6 +13,9 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
+      - add_ssh_keys:
+          fingerprints
+            -"0f:44:af:b6:b2:3f:86:7d:e1:7b:e6:a9:46:7f:1d:e6"
       - checkout
       - run:
           name: "rm node module"
@@ -20,6 +23,15 @@ jobs:
       - run:
           name: "install"
           command: "npx pnpm i"
+      - run:
+          name: "build"
+          command: "npx pnpm build"
+      - run:
+          name: "Prepare shell commands"
+          command: chmod +x scripts/deploy.sh
+      - run:
+          name: "Run Deploy to Github Pages"
+          command: ./scripts/deploy.sh
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
