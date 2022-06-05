@@ -18,9 +18,9 @@ cd gh-pages-branch
 
 cd build
 
-# git config --global user.email "$GH_EMAIL" >/dev/null 2>&1
+git config --global user.email "$GH_EMAIL" >/dev/null 2>&1
 
-# git config --global user.name "$GH_NAME" >/dev/null 2>&1
+git config --global user.name "$GH_NAME" >/dev/null 2>&1
 
 git init
 
@@ -41,7 +41,7 @@ ls -la
 git add .
 git commit --allow-empty -m "Deploy to GitHub pages [ci skip]"
 
-git push origin ph-pages -f
+git push origin gh-pages -f
 
 # cd ..
 
