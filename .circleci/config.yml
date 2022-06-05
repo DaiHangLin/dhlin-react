@@ -14,7 +14,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - add_ssh_keys:
-          fingerprints
+          fingerprints:
             -"0f:44:af:b6:b2:3f:86:7d:e1:7b:e6:a9:46:7f:1d:e6"
       - checkout
       - run:
